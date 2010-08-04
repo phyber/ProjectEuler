@@ -1,5 +1,6 @@
 # Ignore compiled C solutions.
 *b
+solution
 
 # Oh no, sometimes we fail!
 core
