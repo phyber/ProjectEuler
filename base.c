@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 
-int main(int argc, const char *argv[])
-{
+#define TRUE 1
+#define FALSE 0
+
+int main(int argc, const char *argv[]) {
 	
 	return 0;
 }
