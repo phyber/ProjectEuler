@@ -8,7 +8,6 @@ int main(int argc, const char *argv[])
 	for (i = 3; i < 1000; i++) {
 		if ( ((i % 3) == 0 && (i % 5) == 0) || ((i % 3) == 0 || (i % 5) == 0) ) {
 			total += i;
-			continue;
 		}
 	}
 
