@@ -10,11 +10,7 @@ int main(int argc, const char *argv[])
 			total += i;
 			continue;
 		}
-		else if ((i % 3) == 0) {
-			total += i;
-			continue;
-		}
-		else if ((i % 5) == 0) {
+		else if ((i % 3) == 0 || (i % 5) == 0) {
 			total += i;
 			continue;
 		}
