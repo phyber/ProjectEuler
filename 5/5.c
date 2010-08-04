@@ -19,12 +19,10 @@ int main(int argc, const char *argv[])
 {
 	unsigned int num = 1;
 	while (1) {
-		if (!is_divisable(num)) {
-			num++;
-		}
-		else {
+		if (is_divisable(num)) {
 			break;
 		}
+		num++;
 	}
 
 	printf("Smallest divisible by 1->20 = %u\n", num);
