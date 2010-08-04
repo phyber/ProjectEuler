@@ -1,3 +1,5 @@
 Numbered directories correspond to the problem number on Project Euler.
 They're separated into directories since each problem may contain multiple
 solutions in multiple languages.
+
+base.c is a quick template to copy into a solutions directory for less typing.
