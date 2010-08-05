@@ -24,11 +24,11 @@ int is_palindrome(unsigned int num) {
 	strncpy(buf2, buf, strlen(buf));
 	strrev(buf2);
 
-	if (strncmp(buf, buf2, sizeof(buf))) {
-		return FALSE;
+	if (strncmp(buf, buf2, sizeof(buf)) == 0) {
+		return TRUE;
 	}
 
-	return TRUE;
+	return FALSE;
 }
 
 int main(int argc, const char *argv[])
