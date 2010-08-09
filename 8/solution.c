@@ -5,10 +5,6 @@
 #define TRUE 1
 #define FALSE 0
 
-//uint32_t prod(int offset, char *n) {
-//	
-//}
-
 int main(int argc, const char *argv[]) {
 	char *number = 
 		"73167176531330624919225119674426574742355349194934"
@@ -36,21 +32,14 @@ int main(int argc, const char *argv[]) {
 	unsigned long long prod = 0;
 	for (i = 0; i < 1000 - 4; i++) {
 		unsigned long long tmp = 1;
-		//char digits[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		//char digits[10];
 		char digits[2];
-		memset(digits, 0, sizeof(digits));
 		for (j = 0; j < 5; j++) {
-			printf("%d / %d\n", i, j);
-		//	snprintf(digits, (size_t)1, "%c", number[i+j]);
-		//	digits = number[i+j];
-		//	printf("%c\n", digits[j*2]);
-		//	digits[j*2] = number[i+j];
-		//	memcpy(&digits[j*2], &number[i+j], 1);
+			memset(digits, 0, sizeof(digits));
+			//printf("%d / %d\n", i, j);
 			memcpy(&digits, &number[i+j], 1);
-			printf("D: %d\n", digits);
+			//printf("D: '%c'\n", digits);
 			tmp = tmp * atoi(digits);
-			printf("%llu\n", tmp);
+			//printf("%llu\n", tmp);
 		}
 
 		if (tmp > prod) {
