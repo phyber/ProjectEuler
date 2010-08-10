@@ -3,6 +3,7 @@
 
 #define MIN 100
 #define MAX 999
+#define BUFSIZE 7
 #define TRUE 1
 #define FALSE 0
 
@@ -16,12 +17,12 @@ void strrev(char *s) {
 }
 
 int is_palindrome(unsigned int num) {
-	char buf[7];
-	char buf2[7];
-	memset(buf, 0, sizeof(buf));
-	memset(buf2, 0, sizeof(buf2));
+	char buf[BUFSIZE];
+	char buf2[BUFSIZE];
+	memset(buf, 0, BUFSIZE);
+	memset(buf2, 0, BUFSIZE);
 
-	snprintf(buf, sizeof(buf), "%u", num);
+	snprintf(buf, BUFSIZE, "%u", num);
 	strncpy(buf2, buf, strlen(buf));
 	strrev(buf2);
 
