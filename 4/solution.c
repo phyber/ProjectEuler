@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
+#define MIN 100
 #define MAX 999
 #define TRUE 1
 #define FALSE 0
@@ -31,14 +32,13 @@ int is_palindrome(unsigned int num) {
 	return FALSE;
 }
 
-int main(int argc, const char *argv[])
-{
+int main(int argc, const char *argv[]) {
 	unsigned int largest = 0;
 	unsigned int i, j;
 	unsigned int prod;
 
-	for (i = 0; i < MAX; i++) {
-		for (j = 0; j < MAX; j++) {
+	for (i = MIN; i < MAX; i++) {
+		for (j = MIN; j < MAX; j++) {
 			prod = i * j;
 			if (is_palindrome(prod)) {
 				if (prod > largest) {
