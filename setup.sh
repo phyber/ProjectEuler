@@ -1,6 +1,7 @@
 #!/bin/bash
 ARGS=("$@")
-PROB="${ARGS[0]}"
+# Zero pad the problem so they line up nicely
+PROB=$(printf "%03d" "${ARGS[0]}")
 
 if [ ! -d "${PROB}" ]; then
 	echo "Creating directory for problem ${PROB} and copying base files."
