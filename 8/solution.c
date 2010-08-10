@@ -35,20 +35,15 @@ int main(int argc, const char *argv[]) {
 		char digits[2];
 		for (j = 0; j < 5; j++) {
 			memset(digits, 0, sizeof(digits));
-			//printf("%d / %d\n", i, j);
-			memcpy(&digits, &number[i+j], 1);
-			//printf("D: '%c'\n", digits);
+			memcpy(&digits, &number[i+j], sizeof(char) * 1);
 			tmp = tmp * atoi(digits);
-			//printf("%llu\n", tmp);
 		}
 
 		if (tmp > prod) {
-			//printf("Greater product! %d*%d*%d*%d*%d = %llu\n", a, b, c, d, e, prod);
 			prod = tmp;
 		}
 	}
 
-	printf("Number(%zd): %s\n", strlen(number), number);
 	printf("Largest product: %llu\n", prod);
 	return 0;
 }
