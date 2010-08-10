@@ -6,7 +6,7 @@
 #define TRUE 1
 #define FALSE 0
 
-void strrev(char s[]) {
+void strrev(char *s) {
 	int tmp, i, j;
 	for (i = 0, j = strlen(s) - 1; i < j; i++, j--) {
 		tmp = s[i];
