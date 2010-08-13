@@ -7,30 +7,22 @@
 #define TRUE 1
 #define FALSE 0
 
-void strrev(char *s) {
-	int tmp, i, j;
-	for (i = 0, j = strlen(s) - 1; i < j; i++, j--) {
-		tmp = s[i];
-		s[i] = s[j];
-		s[j] = tmp;
-	}
-}
-
 int is_palindrome(unsigned int num) {
+	int i, j;
 	char buf[BUFSIZE];
-	char buf2[BUFSIZE];
 	memset(buf, 0, BUFSIZE);
-	memset(buf2, 0, BUFSIZE);
-
 	snprintf(buf, BUFSIZE, "%u", num);
-	strncpy(buf2, buf, strlen(buf));
-	strrev(buf2);
 
-	if (strncmp(buf, buf2, sizeof(buf)) == 0) {
-		return TRUE;
+	for (i = 0, j = strlen(buf) - 1; i < j; i++, j--) {
+		// Compare first half of the string to the 2nd half.
+		// If they don't match, bail out.
+		if (buf[i] != buf[j]) {
+			return FALSE;
+		}
 	}
 
-	return FALSE;
+	// If we're here, everything matched and we have a palindrome!
+	return TRUE;
 }
 
 int main(int argc, const char *argv[]) {
@@ -38,6 +30,8 @@ int main(int argc, const char *argv[]) {
 	unsigned int i, j;
 	unsigned int prod;
 
+	// There's probably a fancy way to cancel out a bunch of these numbers
+	// and make the loop shorter.
 	for (i = MIN; i < MAX; i++) {
 		for (j = MIN; j < MAX; j++) {
 			prod = i * j;
