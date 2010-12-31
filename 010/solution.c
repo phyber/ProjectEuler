@@ -13,6 +13,7 @@
 
 int is_prime(unsigned int num) {
 	unsigned int i = 2;
+	short j = 0;
 
 	// We only need to see if numbers up to the sqrt are prime.
 	unsigned int sqr = (int)sqrt(num);
@@ -23,8 +24,12 @@ int is_prime(unsigned int num) {
 		}
 
 		// Skip even numbers if we get past % 2.
-		if (i > 2) {
-			i += 2;
+		if (i >= 5) {
+			if (!j)
+				i += 2;
+			else
+				i += 4;
+			j = !j;
 		}
 		else {
 			i++;
