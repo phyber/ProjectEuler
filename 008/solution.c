@@ -1,3 +1,7 @@
+/*
+ * Find the greatest product of five consecutive digits in the 1000-digit number.
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
