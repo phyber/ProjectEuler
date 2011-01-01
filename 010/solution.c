@@ -14,7 +14,7 @@
 
 typedef unsigned long long uint64_t;
 
-void genprimes(short *primes) {
+void genprimes(char *primes) {
 	uint64_t i, j;
 	// Set them all to true to begin with
 	for (i = 0; i < MAXPRIMES; i++) {
@@ -35,7 +35,7 @@ int main(int argc, const char *argv[]) {
 	unsigned long long total = 0;
 	unsigned int i;
 	// Not checking things is cool. JUST BELIEVE IT WILL WORK AND IT WILL.
-	short *primes = malloc(sizeof(short) * MAXPRIMES);
+	char *primes = malloc(sizeof(char) * MAXPRIMES);
 	genprimes(primes);
 
 	for (i = 2; i < MAXPRIMES; i++) {
