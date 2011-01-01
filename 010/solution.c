@@ -6,51 +6,46 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <math.h>
+#include <stdlib.h>
 
 #define TRUE 1
 #define FALSE 0
+#define MAXPRIMES 2000000
 
-int is_prime(unsigned int num) {
-	unsigned int i = 2;
-	short j = 0;
+typedef unsigned long long uint64_t;
 
-	// We only need to see if numbers up to the sqrt are prime.
-	unsigned int sqr = (int)sqrt(num);
-
-	while (i <= sqr) {
-		if (num % i == 0) {
-			return FALSE;
-		}
-
-		// Skip even numbers if we get past % 2.
-		if (i >= 5) {
-			if (!j)
-				i += 2;
-			else
-				i += 4;
-			j = !j;
-		}
-		else {
-			i++;
-		}
+void genprimes(short *primes) {
+	uint64_t i, j;
+	// Set them all to true to begin with
+	for (i = 0; i < MAXPRIMES; i++) {
+		primes[i] = TRUE;
 	}
 
-	return TRUE;
+	// Now start marking things that aren't prime
+	for (i = 2; i < MAXPRIMES; i++) {
+		if (primes[i] == TRUE) {
+			for (j = 2 * i; j < MAXPRIMES; j += i) {
+				primes[j] = FALSE;
+			}
+		}
+	}
 }
 
-int main(int argc, const char *argv[])
-{
+int main(int argc, const char *argv[]) {
 	unsigned long long total = 0;
 	unsigned int i;
+	// Not checking things is cool. JUST BELIEVE IT WILL WORK AND IT WILL.
+	short *primes = malloc(sizeof(short) * MAXPRIMES);
+	genprimes(primes);
 
-	for (i = 2; i < 2000000; i++) {
-		if (is_prime(i)) {
+	for (i = 2; i < MAXPRIMES; i++) {
+		if (primes[i] == TRUE) {
 			total += i;
 		}
 	}
 
 	printf("Sum of primes < 2,000,000 = %llu\n", total);
 
+	free(primes);
 	return 0;
 }
