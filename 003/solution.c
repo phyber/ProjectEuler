@@ -4,18 +4,13 @@
  * What is the largest prime factor of the number 600851475143 ?
  */
 
-/*
- * TODO: This never actually finished running, it just so happens that the
- * last number to be spat out quickly is the answer.
- * Should really fix this.
- */
-
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
 
 #define TRUE 1
 #define FALSE 0
+#define NUMBER 600851475143LL
 
 typedef unsigned long long uint64_t;
 
@@ -50,18 +45,17 @@ int is_prime(unsigned int num) {
 int main(int argc, const char *argv[]) {
 	uint64_t i;
 	uint64_t lpf = 0;
-	uint64_t num = 600851475143;
+	uint64_t max = sqrt(NUMBER);
 
-	for (i = 1; i < num; i++) {
+	for (i = 1; i < max; i++) {
 		if (is_prime(i)) {
-			if ((num % i) == 0) {
+			if ((NUMBER % i) == 0) {
 				lpf = i;
-				printf("New LPF found: %lld\n", lpf);
 			}
 		}
 	}
 
-	printf("Largest prime factor of %lld is %lld\n", num, lpf);
+	printf("Largest prime factor of %lld is %lld\n", NUMBER, lpf);
 
 	return 0;
 }
