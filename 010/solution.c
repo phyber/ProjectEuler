@@ -32,8 +32,8 @@ void genprimes(char *primes) {
 }
 
 int main(int argc, const char *argv[]) {
-	unsigned long long total = 0;
-	unsigned int i;
+	uint64_t total = 0;
+	unsigned long i;
 	// Not checking things is cool. JUST BELIEVE IT WILL WORK AND IT WILL.
 	char *primes = malloc(sizeof(char) * MAXPRIMES);
 	genprimes(primes);
