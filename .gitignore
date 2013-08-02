@@ -3,5 +3,11 @@
 solution
 *.bin
 
+# Python ignores
+*.pyc
+
 # Oh no, sometimes we fail!
 core
+
+# vim backups
+*~
