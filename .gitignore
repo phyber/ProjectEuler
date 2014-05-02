@@ -11,3 +11,6 @@ core
 
 # vim backups
 *~
+
+# built golang solutions
+golang
